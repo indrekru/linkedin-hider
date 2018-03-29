@@ -9,4 +9,14 @@ Once you're fully visible, you can see all kinds of interesting stats about who'
 
 Hope it's useful to someone!
 
+## How to use?
+It's waiting for a review in google webstore, maybe will add link later here, BUT to get on with it fast:
+
+1) Download it, unpack it
+2) Open your chrome extensions settings
+3) Turn on developer mode
+4) Click "Load unpacked" and navigate to the root of your unpacked folder, select it.
+5) Navigate to your linkedin page, it should pop up.
+6) Profit!
+
 ![LinkedIn Hider](screenshot.png "LinkedIn Hider")
