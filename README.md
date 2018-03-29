@@ -7,4 +7,6 @@ Other times you want to see who's been viewing you, but to see that information 
 I say NO, I deserve better than this! This extension always shows a modal on top of the LinkedIn page, on it you have 2 buttons to "Anonymise" yourself fully OR make yourself fully "Visible" with just a click of a button. 
 Once you're fully visible, you can see all kinds of interesting stats about who's been viewing you, what's the % rise in lookups etc.
 
+Hope it's useful to someone!
+
 ![LinkedIn Hider](screenshot.png "LinkedIn Hider")
