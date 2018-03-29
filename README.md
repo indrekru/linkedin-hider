@@ -2,8 +2,8 @@
 
 You probably don't want others to see when you've visited their LinkedIn account, so you hide yourself in LinkedIn privacy settings. This place is well hidden.
 
-Other times you want to see who's been viewing you, but to see that information you have to enable your full visibility, which is very inconvenient, finding it again in privacy settings. 
+Other times you want to see who's been viewing you, but to see that information you have to enable your full visibility, which means finding that place in privacy settings again, ooh.. 
 
-This extension pops up a modal on top of the page, where you have 2 buttons to anonymise yourself fully or make you fully visible with just a click of a button.
+I say screw that! This extension always shows a modal on top of the LinkedIn page, on it you have 2 buttons to "Anonymise" yourself fully OR make yourself fully "Visible" with just a click of a button.
 
 ![LinkedIn Hider](screenshot.png "LinkedIn Hider")
