@@ -1,6 +1,6 @@
 # Chrome extension: LinkedIn Hider
 
-You probably don't want others to see when you've visited their LinkedIn account, so you hide yourself in LinkedIn privacy settings. This place is well hidden.
+Some poeple don't want others to see when you've visited their LinkedIn account, so you hide yourself in LinkedIn privacy settings. This place is well hidden.
 
 Other times you want to see who's been viewing you, but to see that information you have to enable your full visibility, which means finding that place in privacy settings again, ooh.. 
 
