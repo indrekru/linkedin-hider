@@ -102,6 +102,7 @@ function isVisible() {
 
 let container = document.createElement('div');
 container.id = 'linkedin_hider';
+container.className = 'p-2 border-gray';
 
 let logo = document.createElement('div');
 logo.className = 'logo linkedin_logo';
@@ -109,24 +110,24 @@ container.appendChild(logo);
 
 let hider = document.createElement('h4');
 hider.innerHTML = 'Hider';
-hider.className = 'hider';
+hider.className = 'text-right color-gray';
 container.appendChild(hider);
 
 loader = document.createElement('p');
 loader.innerHTML = 'Loading...'
-loader.className = 'm-t-3 m-b-3 text-center';
+loader.className = 'm-t-3 m-b-2 text-center';
 container.appendChild(loader);
 
 anonymousButton = document.createElement('button');
 anonymousButton.innerHTML = 'Make me anonymous';
 anonymousButton.onclick = fullyAnonymous;
-anonymousButton.className = 'button m-t-2 m-b-2 hide';
+anonymousButton.className = 'button m-t-2 hide';
 container.appendChild(anonymousButton);
 
 fullyVisibleButton = document.createElement('button');
 fullyVisibleButton.innerHTML = 'Make me visible';
 fullyVisibleButton.onclick = fullyVisible;
-fullyVisibleButton.className = 'button m-t-2 m-b-2 hide';
+fullyVisibleButton.className = 'button m-t-2 hide';
 container.appendChild(fullyVisibleButton);
 
 document.body.appendChild(container);

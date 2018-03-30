@@ -1,14 +1,16 @@
 #linkedin_hider {
     position: fixed;
-    top: 10px;
-    right: 10px;
+    top: 8px;
+    right: 8px;
     width: 200px;
     min-height: 100px;
     background-color: #fff;
-    border: 1px solid #000;
     border-radius: 5px;
     z-index: 9999999;
-    padding: 15px;
+}
+
+#linkedin_hider.border-gray {
+    border: 1px solid #283e4a;
 }
 
 #linkedin_hider .hide {
@@ -18,10 +20,6 @@
 #linkedin_hider .logo {
     width: 100%;
     height: 50px;
-}
-
-#linkedin_hider .hider {
-    text-align: right;
 }
 
 #linkedin_hider .linkedin_logo {
@@ -57,6 +55,18 @@
     margin-bottom: 24px;
 }
 
+#linkedin_hider.p-2, #linkedin_hider .p-2 {
+    padding: 16px;
+}
+
 #linkedin_hider .text-center {
     text-align: center;
+}
+
+#linkedin_hider .text-right {
+    text-align: right;
+}
+
+#linkedin_hider .color-gray {
+    color: #283e4a;
 }
