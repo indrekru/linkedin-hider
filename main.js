@@ -15,8 +15,8 @@ let commandBodies = {
 */
 
 function findJsessionId() {
-    var theCookies = document.cookie.split(';');
-    for (var i = 1 ; i <= theCookies.length; i++) {
+    let theCookies = document.cookie.split(';');
+    for (let i = 1 ; i <= theCookies.length; i++) {
         let cookieStr = theCookies[i-1].trim();
         let cookieParts = cookieStr.split('=');
         if (cookieParts[0].indexOf('JSESSIONID') > -1) {
