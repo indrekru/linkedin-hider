@@ -32,13 +32,13 @@ function cleanupJsessionId(jsessionId) {
 
 function runCommand(commandKey) {
     $.ajax({
-		method: 'POST',
-		url: "/psettings/profile-visibility",
-		contentType: 'multipart/form-data; boundary=----WebKitFormBoundary',
-		data: commandBodies[commandKey],
-		success: function(result){
-			location.reload();
-    	}
+        method: 'POST',
+        url: "/psettings/profile-visibility",
+        contentType: 'multipart/form-data; boundary=----WebKitFormBoundary',
+        data: commandBodies[commandKey],
+        success: function(result){
+            location.reload();
+        }
     });
 } 
  
