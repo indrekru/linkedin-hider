@@ -11,7 +11,7 @@ let commandBodies = {
 };
 
 /**
-*	Functions
+*   Functions
 */
 
 function findJsessionId() {
