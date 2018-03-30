@@ -10,7 +10,7 @@ Once you're fully visible, you can see all kinds of interesting stats about who'
 Hope it's useful to someone!
 
 ## How to use?
-It's waiting for a review in google webstore, maybe will add link later here, BUT to get on with it fast:
+Chrome webstoere: https://chrome.google.com/webstore/detail/linkedin-hider-unofficial/locnlcobgflnmgaloacchhpfpgpecceo
 
 1) Download it, unpack it
 2) Open your chrome extensions settings
