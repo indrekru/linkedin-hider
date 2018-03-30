@@ -1,5 +1,4 @@
-!node_modules/
-
-node_modules/*
+node_modules/
 !node_modules/jquery/dist/
+
 package-lock.json
