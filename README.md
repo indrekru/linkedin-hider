@@ -1,4 +1,5 @@
 # Chrome extension: LinkedIn Hider
+Available in chrome store: https://chrome.google.com/webstore/detail/linkedin-hider-unofficial/locnlcobgflnmgaloacchhpfpgpecceo
 
 Some poeple don't want others to see when you've visited their LinkedIn account, so you hide yourself in LinkedIn privacy settings. This place is well hidden.
 
@@ -10,7 +11,9 @@ Once you're fully visible, you can see all kinds of interesting stats about who'
 Hope it's useful to someone!
 
 ## How to use?
-It's waiting for a review in google webstore, maybe will add link later here, BUT to get on with it fast:
+Install it via Chrome webstore: https://chrome.google.com/webstore/detail/linkedin-hider-unofficial/locnlcobgflnmgaloacchhpfpgpecceo
+
+OR locally:
 
 1) Download it, unpack it
 2) Open your chrome extensions settings
