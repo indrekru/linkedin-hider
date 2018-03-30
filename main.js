@@ -27,7 +27,7 @@ function findJsessionId() {
 }
 
 function cleanupJsessionId(jsessionId) {
-	return jsessionId.substring(1, jsessionId.length - 1);
+    return jsessionId.substring(1, jsessionId.length - 1);
 }
 
 function runCommand(commandKey) {
@@ -52,7 +52,7 @@ function fullyVisible() {
 }
 
 /**
-* 	Build DOM
+*   Build DOM
 */
 
 let container = document.createElement('div');
