@@ -6,3 +6,5 @@ node_modules/jquery/dist/*
 !node_modules/jquery/dist/jquery.min.js
 
 package-lock.json
+
+.DS_Store
