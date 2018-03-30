@@ -1,7 +1,8 @@
-// Variables
+/**
+*   Variables
+*/
 
 let jsessionId;
-
 
 /**
 *	Functions

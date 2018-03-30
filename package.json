@@ -1,0 +1,10 @@
+{
+  "name": "linkedin-hider",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=6.4.0"
+  },
+  "devDependencies": {
+    "jquery": "~3.3.1"
+  }
+}
