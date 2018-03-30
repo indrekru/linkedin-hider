@@ -5,7 +5,7 @@
   "description": "Easily switch between hiding yourself fully when browsing other profiles or unhide when you want to see who's watched you",
   "content_scripts": [{
     "css": ["styles.css"],
-    "js": ["content.js", "node_modules/jquery/dist/jquery.min.js"],
+    "js": ["main.js", "node_modules/jquery/dist/jquery.min.js"],
     "matches": ["https://www.linkedin.com/*"]
   }],
   "permissions": [
