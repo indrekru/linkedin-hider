@@ -5,6 +5,5 @@
     "node": ">=6.4.0"
   },
   "devDependencies": {
-    "jquery": "~3.3.1"
   }
 }
