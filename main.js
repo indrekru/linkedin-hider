@@ -2,7 +2,13 @@
 *   Variables
 */
 
-let jsessionId;
+let jsessionId = findJsessionId();
+jsessionId = cleanupJsessionId(jsessionId);
+
+let commandBodies = {
+    'anonymous' : '------WebKitFormBoundary\r\nContent-Disposition: form-data; name="dataKey"\r\n\r\nprofileVisibility\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="el"\r\n\r\n#setting-profile-visibility\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="settingsUrls"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="name"\r\n\r\nprofile-visibility\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="locale"\r\n\r\nen_US\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="isNotCnDomain"\r\n\r\ntrue\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="headerData"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="path"\r\n\r\n/psettings/profile-visibility\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="data"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="lixTests"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="pageTitle"\r\n\r\nProfile viewing\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="settingVisibility"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="device"\r\n\r\nDESKTOP\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="setting"\r\n\r\nprofile-visibility\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="initialFetch"\r\n\r\ntrue\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="dataVal"\r\n\r\nDISCLOSE_FULL\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="hasSuccess"\r\n\r\nfalse\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="errors"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="discloseAsProfileViewer"\r\n\r\nHIDE\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="csrfToken"\r\n\r\n' + jsessionId + '\r\n------WebKitFormBoundary--\r\n',
+    'full' : '------WebKitFormBoundary\r\nContent-Disposition: form-data; name="dataKey"\r\n\r\nprofileVisibility\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="el"\r\n\r\n#setting-profile-visibility\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="settingsUrls"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="name"\r\n\r\nprofile-visibility\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="dataVal"\r\n\r\nHIDE\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="locale"\r\n\r\nen_US\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="isNotCnDomain"\r\n\r\ntrue\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="headerData"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="path"\r\n\r\n/psettings/profile-visibility\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="data"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="lixTests"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="pageTitle"\r\n\r\nProfile viewing\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="settingVisibility"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="device"\r\n\r\nDESKTOP\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="setting"\r\n\r\nprofile-visibility\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="initialFetch"\r\n\r\ntrue\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="hasSuccess"\r\n\r\nfalse\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="errors"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="discloseAsProfileViewer"\r\n\r\nDISCLOSE_FULL\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="csrfToken"\r\n\r\n' + jsessionId + '\r\n------WebKitFormBoundary--\r\n'
+};
 
 /**
 *	Functions
@@ -23,33 +29,26 @@ function findJsessionId() {
 function cleanupJsessionId(jsessionId) {
 	return jsessionId.substring(1, jsessionId.length - 1);
 }
- 
 
-function fullyAnonymous(){	
-	$.ajax({
+function runCommand(commandKey) {
+    $.ajax({
 		method: 'POST',
 		url: "/psettings/profile-visibility",
 		contentType: 'multipart/form-data; boundary=----WebKitFormBoundary',
-		data: '------WebKitFormBoundary\r\nContent-Disposition: form-data; name="dataKey"\r\n\r\nprofileVisibility\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="el"\r\n\r\n#setting-profile-visibility\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="settingsUrls"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="name"\r\n\r\nprofile-visibility\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="locale"\r\n\r\nen_US\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="isNotCnDomain"\r\n\r\ntrue\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="headerData"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="path"\r\n\r\n/psettings/profile-visibility\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="data"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="lixTests"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="pageTitle"\r\n\r\nProfile viewing\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="settingVisibility"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="device"\r\n\r\nDESKTOP\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="setting"\r\n\r\nprofile-visibility\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="initialFetch"\r\n\r\ntrue\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="dataVal"\r\n\r\nDISCLOSE_FULL\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="hasSuccess"\r\n\r\nfalse\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="errors"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="discloseAsProfileViewer"\r\n\r\nHIDE\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="csrfToken"\r\n\r\n' + jsessionId + '\r\n------WebKitFormBoundary--\r\n',
+		data: commandBodies[commandKey],
 		success: function(result){
 			location.reload();
     	}
     });
-	
-	
+} 
+ 
+
+function fullyAnonymous(){
+    runCommand('anonymous');
 }
 
 function fullyVisible() {
-	$.ajax({
-		method: 'POST',
-		url: "/psettings/profile-visibility",
-		contentType: 'multipart/form-data; boundary=----WebKitFormBoundary',
-		data: '------WebKitFormBoundary\r\nContent-Disposition: form-data; name="dataKey"\r\n\r\nprofileVisibility\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="el"\r\n\r\n#setting-profile-visibility\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="settingsUrls"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="name"\r\n\r\nprofile-visibility\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="dataVal"\r\n\r\nHIDE\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="locale"\r\n\r\nen_US\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="isNotCnDomain"\r\n\r\ntrue\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="headerData"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="path"\r\n\r\n/psettings/profile-visibility\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="data"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="lixTests"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="pageTitle"\r\n\r\nProfile viewing\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="settingVisibility"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="device"\r\n\r\nDESKTOP\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="setting"\r\n\r\nprofile-visibility\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="initialFetch"\r\n\r\ntrue\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="hasSuccess"\r\n\r\nfalse\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="errors"\r\n\r\n[object Object]\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="discloseAsProfileViewer"\r\n\r\nDISCLOSE_FULL\r\n------WebKitFormBoundary\r\nContent-Disposition: form-data; name="csrfToken"\r\n\r\n' + jsessionId + '\r\n------WebKitFormBoundary--\r\n',
-		success: function(result){
-			location.reload();
-    	}
-    });
-	
+    runCommand('full');
 }
 
 /**
@@ -80,14 +79,6 @@ fullyVisibleButton.onclick = fullyVisible;
 fullyVisibleButton.className = 'button';
 container.appendChild(fullyVisibleButton);
 
-
 document.body.appendChild(container);
-
-/**
-*	Main
-*/
-
-jsessionId = findJsessionId();
-jsessionId = cleanupJsessionId(jsessionId);
 
 console.log('LinkedIn Hider loaded');
