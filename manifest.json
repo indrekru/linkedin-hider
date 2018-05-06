@@ -1,8 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "LinkedIn Hider (Unofficial)",
-  "version": "0.1.4",
-  "description": "Easily switch between hiding yourself fully when browsing other profiles or unhide when you want to see who's watched you",
+  "name": "LinkedIn Hider",
+  "short_name": "LI Hider",
+  "version": "0.1.5",
+  "description": "Easily hide yourself fully when browsing other profiles or unhide when you want to see who's watched you",
   "content_scripts": [{
     "css": ["styles.css"],
     "js": ["main.js"],
