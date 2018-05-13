@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "LinkedIn Hider",
   "short_name": "LI Hider",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Easily hide yourself fully when browsing other profiles or unhide when you want to see who's watched you",
   "content_scripts": [{
     "css": ["styles.css"],

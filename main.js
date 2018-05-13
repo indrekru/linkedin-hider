@@ -13,9 +13,9 @@ let commands = {
 };
 
 const defaultClassNames = {
-    'loader' : 'm-t-3 m-b-2 text-center',
-    'anonymousButton' : 'button m-t-2',
-    'fullyVisibleButton' : 'button m-t-2'
+    'loader' : 'text-center f-8',
+    'anonymousButton' : 'button f-8',
+    'fullyVisibleButton' : 'button f-8'
 };
 
 /**
@@ -70,7 +70,7 @@ function http(method, url, requestBody, headers, callback){
     }
     xmlHttp.open(method, url, true); // true for asynchronous
     for (headerKey in headers) {
-        xmlHttp.setRequestHeader(headerKey, headers[headerKey]);   
+        xmlHttp.setRequestHeader(headerKey, headers[headerKey]);
     }
     xmlHttp.send(requestBody);
 }
@@ -134,19 +134,13 @@ function init() {
 */
 
 let container = createDomElement('div', {
-    id          : 'linkedin-hider', 
-    className   : 'p-2 border-gray'
+    id          : 'linkedin-hider',
+    className   : 'border-gray'
 });
 
-let logo = createDomElement('div', {
-    className   : 'logo linkedin-logo'
-});
-
-container.appendChild(logo);
-
-let hiderTitle = createDomElement('h4', {
+let hiderTitle = createDomElement('p', {
     text        : 'Hider',
-    className   : 'text-right color-gray'
+    className   : 'text-center color-gray f-8'
 });
 
 container.appendChild(hiderTitle);
